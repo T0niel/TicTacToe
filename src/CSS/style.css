@@ -1,0 +1,139 @@
+:root {
+    --body-background-clr: #020202;
+    --square-border-clr: #9DA2AB;
+    --btn-background-clr: #0D324D;
+    --btn-background-clr-hover: #092234;
+    --btn-border-clr: #9DA2AB;
+}
+
+@font-face {
+    font-family: UbuntuReg;
+    src: url("../Media/Fonts/Ubuntu/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: UbuntuMid;
+    src: url("../Media/Fonts/Ubuntu/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+    font-family: UbuntuBold;
+    src: url("../Media/Fonts/Ubuntu/Ubuntu-Bold.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--body-background-clr);
+    color: white;
+    font-family: UbuntuReg;
+}
+
+.container {
+    padding: 2rem;
+    padding-bottom: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr minmax(20rem, 2fr) 1fr;
+    grid-template-areas: "LeftSide PlayContainer RightSide";
+}
+
+button {
+    background-color: var(--btn-background-clr);
+    color: white;
+    border: 2px solid var(--btn-border-clr);
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--btn-background-clr-hover);
+    border: 2px solid white;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+}
+
+.left-side {
+    grid-area: LeftSide;
+}
+
+.right-side {
+    grid-area: RightSide;
+}
+
+.score-counter {
+    text-align: center;
+}
+
+.pick-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/*The default 3x3*/
+.play-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: rgba(255, 255, 255, 0.1);
+    height: calc(40vw + 5rem);
+}
+
+.square {
+    border: 2px solid var(--square-border-clr);
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 4vw;
+}
+
+.alert {
+    color: red;
+    text-align: center;
+}
+
+@media only screen and (max-width: 80rem) {
+    .container {
+        display: block;
+    }
+
+    .score-counter {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .right-side {
+        display: block;
+        width: 100%;
+        /* Full width to ensure it takes the entire available space */
+        text-align: center;
+        /* Center text within the block */
+    }
+
+    .play-container {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 40rem) and (max-width: 80rem) {
+    .play-container {
+        height: calc(20vw + 30rem);
+    }
+}

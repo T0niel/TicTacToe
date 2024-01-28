@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/CSS/style.css">
+    <title>TicTacToe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="wrapper">
+                <button class="play-btn">Play</button>
+                <button class="reset-btn">Reset</button>
+            </div>
+            <div class="pick-container">
+                  <button id="3x3">3x3</button>
+                  <button id="6x6">6x6</button>
+                  <button id="9x9">9x9</button>  
+            </div>
+        </div>
+        <div class="play-container"><!--added after--></div>
+        <div class="right-side">
+            <div class="score-counter">
+                <p class="score-paragragh">Scores</p>
+                <p class="player-score">Player: 0</p>
+                <p class="bot-score">Bot: 0</p>
+            </div>
+        </div>
+    </div>
+    <p class="errors alert"></p>
+    <script src="src/JS/game.js"></script>
+    <script src="src/JS/script.js"></script>
+</body>
+</html>
