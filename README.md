@@ -4,7 +4,6 @@ Welcome to the Tic Tac Toe web application! This simple game allows two players 
 
 ## Features
 - **Responsive Design:** Play the game seamlessly on various devices, including desktops, tablets, and mobile phones.
-- **Turn-Based Gameplay:** Enjoy a classic turn-based gaming experience with two players taking turns to make their moves.
 - **Winning Logic:** The game automatically checks for a winning combination after each move, declaring a winner or a draw accordingly.
 - **Reset Functionality:** Start a new game at any time with the reset button.
 
