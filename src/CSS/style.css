@@ -4,6 +4,7 @@
     --btn-background-clr: #0D324D;
     --btn-background-clr-hover: #092234;
     --btn-border-clr: #9DA2AB;
+    --square-background-clr-hover: rgba(255, 255, 255, 0.1);
 }
 
 @font-face {
@@ -52,6 +53,7 @@ button {
 button:hover {
     background-color: var(--btn-background-clr-hover);
     border: 2px solid white;
+    transition: .5s ease-in-out;
 }
 
 .wrapper {
@@ -114,6 +116,17 @@ button:hover {
     padding: 1rem;
 }
 
+.score-counter:hover{
+    background-color: white;
+    color: var(--body-background-clr);
+    transition: .5s ease-in-out;
+}
+
+.square:hover{
+    background-color: var(--square-background-clr-hover);
+    transition: .2s ease-in-out;
+}
+
 @media only screen and (max-width: 80rem) {
     .container {
         display: block;
@@ -141,6 +154,6 @@ button:hover {
 
 @media only screen and (min-width: 40rem) and (max-width: 80rem) {
     .play-container {
-        height: calc(20vw + 30rem);
+        height: calc(30vw + 35rem);
     }
 }
