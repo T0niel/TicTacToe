@@ -1,6 +1,7 @@
 # Tic Tac Toe Web App
 
 Welcome to the Tic Tac Toe web application! This simple game allows two players to take turns marking spaces on a 3x3 grid, aiming to achieve a winning combination.
+live at: https://elton-1.github.io/TicTacToe/
 
 ## Features
 - **Responsive Design:** Play the game seamlessly on various devices, including desktops, tablets, and mobile phones.
