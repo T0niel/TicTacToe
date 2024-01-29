@@ -39,25 +39,22 @@ const start = function (row, col) {
     }
 
     //returns true if we are still playing
-    function evaluatePosition(){
-        if(board.playerWon())
-        {
+    function evaluatePosition() {
+        if (board.playerWon()) {
             alert("You won");
             let clickEvent = new MouseEvent("click");
             resetBtn.dispatchEvent(clickEvent);
             playerScore.textContent = playerScore.textContent.split(' ')[0] + " " + (+playerScore.textContent.split(' ')[1] + 1);
             return false;
         }
-        else if(board.botWon())
-        {
+        else if (board.botWon()) {
             alert("You lost!");
             let clickEvent = new MouseEvent("click");
             resetBtn.dispatchEvent(clickEvent);
             botScore.textContent = botScore.textContent.split(' ')[0] + " " + (+botScore.textContent.split(' ')[1] + 1);
             return false;
         }
-        else if(board.draw())
-        {
+        else if (board.draw()) {
             alert("Draw!");
             let clickEvent = new MouseEvent("click");
             resetBtn.dispatchEvent(clickEvent);
@@ -75,12 +72,12 @@ const start = function (row, col) {
             alertParagraph.textContent = "Cannot move there!";
         } else {
             //if we clicked somewere wrong before then display that to none
-            if(alertParagraph.textContent.length > 0){
+            if (alertParagraph.textContent.length > 0) {
                 alertParagraph.textContent = "";
             }
-            
+
             print();
-            if(evaluatePosition()){
+            if (evaluatePosition()) {
                 board.bot.play();
                 print();
                 evaluatePosition();
@@ -116,43 +113,27 @@ function resetBtnOnClick(row, col) {
     }
 }
 
+function askUserIfResetGame(row, col) {
+    const proceed = confirm("This will reset the game are you sure?");
+
+    if (proceed) {
+        resetSquares();
+        start(row, col);
+        resetBtn.addEventListener("click", resetBtnOnClick(3, 3));
+        pickContainer.style.display = "none";
+    }
+}
+
 pickContainer.addEventListener("click", (e) => {
     switch (e.target.id) {
         case "3x3":
-            {
-                const proceed = confirm("This will reset the game are you sure?");
-
-                if (proceed) {
-                    resetSquares();
-                    start(3, 3);
-                    resetBtn.addEventListener("click", resetBtnOnClick(3, 3));
-                    pickContainer.style.display = "none";
-                }
-            }
+            askUserIfResetGame(3, 3);
             break;
         case "6x6":
-            {
-                const proceed = confirm("This will reset the game are you sure?");
-
-                if (proceed) {
-                    resetSquares();
-                    start(6, 6);
-                    resetBtn.addEventListener("click", resetBtnOnClick(6, 6));
-                    pickContainer.style.display = "none";
-                }
-            }
+            askUserIfResetGame(6, 6);
             break;
         case "9x9":
-            {
-                const proceed = confirm("This will reset the game are you sure?");
-
-                if (proceed) {
-                    resetSquares();
-                    start(9, 9);
-                    resetBtn.addEventListener("click", resetBtnOnClick(9, 9));
-                    pickContainer.style.display = "none";
-                }
-            }
+            askUserIfResetGame(9, 9);
             break;
     }
 })
