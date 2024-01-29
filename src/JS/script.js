@@ -119,7 +119,7 @@ function askUserIfResetGame(row, col) {
     if (proceed) {
         resetSquares();
         start(row, col);
-        resetBtn.addEventListener("click", resetBtnOnClick(3, 3));
+        resetBtn.addEventListener("click", resetBtnOnClick(row, col));
         pickContainer.style.display = "none";
     }
 }
