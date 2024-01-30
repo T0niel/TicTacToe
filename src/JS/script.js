@@ -41,23 +41,32 @@ const start = function (row, col) {
     //returns true if we are still playing
     function evaluatePosition() {
         if (board.playerWon()) {
-            alert("You won");
-            let clickEvent = new MouseEvent("click");
-            resetBtn.dispatchEvent(clickEvent);
-            playerScore.textContent = playerScore.textContent.split(' ')[0] + " " + (+playerScore.textContent.split(' ')[1] + 1);
+            print();
+            setTimeout(() => {
+                alert("You won");
+                let clickEvent = new MouseEvent("click");
+                resetBtn.dispatchEvent(clickEvent);
+                playerScore.textContent = playerScore.textContent.split(' ')[0] + " " + (+playerScore.textContent.split(' ')[1] + 1);
+            }, 300);
             return false;
         }
         else if (board.botWon()) {
-            alert("You lost!");
-            let clickEvent = new MouseEvent("click");
-            resetBtn.dispatchEvent(clickEvent);
-            botScore.textContent = botScore.textContent.split(' ')[0] + " " + (+botScore.textContent.split(' ')[1] + 1);
+            print();
+            setTimeout(() => {
+                alert("You lost!");
+                let clickEvent = new MouseEvent("click");
+                resetBtn.dispatchEvent(clickEvent);
+                botScore.textContent = botScore.textContent.split(' ')[0] + " " + (+botScore.textContent.split(' ')[1] + 1);
+            }, 300);
             return false;
         }
         else if (board.draw()) {
-            alert("Draw!");
-            let clickEvent = new MouseEvent("click");
-            resetBtn.dispatchEvent(clickEvent);
+            print();
+            setTimeout(() => {
+                alert("Draw!");
+                let clickEvent = new MouseEvent("click");
+                resetBtn.dispatchEvent(clickEvent);
+            }, 300);
             return false;
         }
 
